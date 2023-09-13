@@ -1,4 +1,4 @@
-package com.example.actualappssean.ui.theme;
+package com.example.actualappssean;
 
 public class User {
     public String userName;
@@ -17,6 +17,4 @@ public class User {
     }
 
     public int getID() {return ID;}
-
-
 }

@@ -45,6 +45,17 @@ public class UserProfileActivity extends AppCompatActivity {
         }else{
             Toast.makeText(UserProfileActivity.this, "User Not Found", Toast.LENGTH_SHORT).show();
         }
+
+        Button buttonRegister = findViewById(R.id.button_update_info);
+        buttonRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(UserProfileActivity.this, "Update Info", Toast.LENGTH_SHORT).show();
+                Intent mainActivity = new Intent(UserProfileActivity.this, UpdateInfo.class);
+                mainActivity.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(mainActivity);
+            }
+        });
     }
 
     private void showUserProfile(FirebaseUser firebaseUser) {
@@ -87,6 +98,4 @@ public class UserProfileActivity extends AppCompatActivity {
         textViewRegisterDate = findViewById(R.id.textView_register);
         progressBar = findViewById(R.id.progressbar);
     }
-
-
 }

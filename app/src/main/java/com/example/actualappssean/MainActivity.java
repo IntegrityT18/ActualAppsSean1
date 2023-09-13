@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "Please enter your email address", Toast.LENGTH_SHORT).show();
                     editTextLoginEmail.setError("An email address is required!");
                     editTextLoginEmail.requestFocus();
-                } else if (TextUtils.isEmpty(textPassword){
+                } else if (TextUtils.isEmpty(textPassword)){
                     Toast.makeText(MainActivity.this, "Please enter a valid password (6+ characters)", Toast.LENGTH_SHORT).show();
                     editTextLoginPwd.setError("A valid password is required!");
                     editTextLoginPwd.requestFocus();
@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void loginUser(String textEmail, String textPassword) {
-        auth.signInWithEmailAndPassword((textEmail, textPassword).addOnCompleteListener(MainActivity.this, new OnCompleteListener<AuthResult>() {
+        auth.signInWithEmailAndPassword(textEmail, textPassword).addOnCompleteListener(MainActivity.this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()) {
